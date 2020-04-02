@@ -1,0 +1,35 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>myplugin</name>
+  <version>201.6668.72</version>
+  <vendor email="support@me.com" url="http://www.irs.com">irs</vendor>
+
+  <description><![CDATA[
+      <h1>this plugin does simply nothing.   </h1>
+      <p>Use Tools | MyPlugin Action1 and Tools | MyPlugin Action2 for nothing</p>
+    ]]></description>
+
+
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="act1" class="com.myplugin.Action1" text="MyPlugin Action1" description="Dummy dialog">
+      <add-to-group group-id="ToolsMenu" anchor="first" />
+    </action>
+    <action id="act2" class="com.myplugin.Action2" text="MyPlugin Action2" description="Dummy form">
+      <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="act1"/>
+    </action>
+  </actions>
+
+</idea-plugin>
